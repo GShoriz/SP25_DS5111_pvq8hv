@@ -62,9 +62,9 @@ By running the following command:
 	cat ~/.ssh/id_ed25519.pub
 	```
 
-- Copy the output.
-- Go to **GitHub** → **Settings** → **SSH and GPG Keys**.
-- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.
+	- Copy the output.
+	- Go to **GitHub** → **Settings** → **SSH and GPG Keys**.
+	- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.
 
 3. Test the SSH connection:
 	
@@ -102,7 +102,7 @@ By running the following command:
 	git clone git@github.com:GShoriz/SP25_DS5111_pvq8hv.git
 	```
 
-- From this point, all setup instructions will be run directly from within this repository.
+- **From this point, all setup instructions will be run directly from within this repository.**
 
 ## 6. Run the Initialization Script
 
@@ -128,7 +128,7 @@ This script will:
 ---
 
 ### Notes:
-- The `init.sh` script includes `sudo apt update`, so running it again after step 2 is redundant but ensures the system is fully updated.
+- The `init.sh` script includes `sudo apt update`,`sudo apt install make -y`, `sudo apt install python3.12-venv -y`, and `sudo apt install tree` so running it again after step 2 is redundant but ensures the system is fully updated.
 
 
 # Chrome Headless Browser install
@@ -142,20 +142,20 @@ this command will create it.
 	```
 
 - Edit the .gitignore File add the following line:
-**google-chrome-stable_current_amd64.deb**
+	- **google-chrome-stable_current_amd64.deb**
 
 ### Note: 
 - **At this point push all changes to your repository, before moving on to the next steps**
 
 ## 2. Installing Required Tools and Scripts
-- Copy the 'requirements.txt.', 'install_chrome_headless.sh', and 'makefile' from the **scripts** folder inside this repository.
+- Copy the `requirements.txt.`, `install_chrome_headless.sh`, and `makefile` from the **scripts** folder inside this repository.
 
-- The requirements.txt includes necessary Python packages: 
+- The `requirements.txt` includes necessary Python packages: 
 	- pandas
 	- lxml
 
 ## 3. Running Chrome Headless Script
-- Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. First, navigate to where you've placed the file then run:
+- Run the `install_chrome_headless.sh` script to install Google Chrome in a headless configuration for web scraping tasks. First, navigate to where you've placed the file then run:
 
 	```bash
 	./install_chrome_headless.sh #if this doesn't work immediatley  run the follwoing command:
@@ -164,7 +164,7 @@ this command will create it.
 After installation, test it by running a quick dump of https://example.com (this is already incldued in the script)
 
 ## 4. Configure Environment with Makefile
-- The Makefile automates the environment setup and running tasks. Here's how to use it:
+- The `makefile` automates the environment setup and running tasks. Here's how to use it:
 
 	```make
 	#  Set up Python virtual environment and install dependencies
