@@ -112,7 +112,7 @@ By running the following command:
 
 	```bash
 	./init.sh #if this doesn't work immediatley run the follwoing command:
-        chmod +x init.sh
+	chmod +x init.sh
 	```
 
 This script will:
