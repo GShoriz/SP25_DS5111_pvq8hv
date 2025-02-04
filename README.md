@@ -161,7 +161,7 @@ this command will create it.
 	./install_chrome_headless.sh #if this doesn't work immediatley  run the follwoing command:
 	chmod +x install_chrome_headless.sh 
 	```
-After installation, test it by running a quick dump of https://example.com (this is already incldued in the script)
+After installation, test it by running a quick dump of `https://example.com` (this is already incldued in the script)
 
 ## 4. Configure Environment with Makefile
 - The `makefile` automates the environment setup and running tasks. Here's how to use it:
