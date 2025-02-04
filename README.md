@@ -99,7 +99,7 @@ By running the following command:
 - Now, you can clone this repository to your VM:
 
 	```bash
-	git clone git@github.com:GShoriz/SP25_DS5111_pvq8hv.git
+	git clone https://github.com/GShoriz/SP25_DS5111_pvq8hv.git
 	```
 
 - **From this point, all setup instructions will be run directly from within this repository.**
