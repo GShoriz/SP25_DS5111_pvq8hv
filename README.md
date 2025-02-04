@@ -1,4 +1,6 @@
-Data Science Class Project Repository
+<h1 align="center">
+  <strong>SP25_UVA Data Science Class Project</strong>
+</h1>
 
 ## Author Information
 
