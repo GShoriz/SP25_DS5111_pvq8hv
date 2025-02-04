@@ -72,7 +72,7 @@ From this point, all setup instructions will be run directly from within this re
 
 ## 6. Run the Initialization Script
 
-To install required dependencies, execute the provided `init.sh` script:
+- To install required dependencies, execute the provided `init.sh` script:
 
 	```bash
 	./init.sh
@@ -137,7 +137,7 @@ After installation, test it by running a quick dump of https://example.com (this
 	make ygainers.csv
 	```
 ## 5. Validate Installation
-Confirm that all parts of the environment are correctly set up by checking the directory structure:
+- Confirm that all parts of the environment are correctly set up by checking the directory structure:
 
 	```bash
 	tree <your-project-repo> -I env
