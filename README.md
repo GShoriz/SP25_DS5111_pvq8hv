@@ -73,7 +73,10 @@ From this point, all setup instructions will be run directly from within this re
 ## 6. Run the Initialization Script
 
 To install required dependencies, execute the provided `init.sh` script:
+
+	```bash
 	./init.sh
+	```
 
 This script will:
 - Update system packages.
@@ -89,16 +92,18 @@ If any command fails, re-run the corresponding setup step.
 
 ### Notes:
 - The `init.sh` script includes `sudo apt update`, so running it again after step 2 is redundant but ensures the system is fully updated.
-- If any step fails, ensure you have proper permissions (use `sudo` when necessary).
+
 
 # Chrome Headless Browser install
 
 ## 1. Setting Up '.gitignore'
 - To prevent failed git pushes due to large files over 100mb, that the Chrome browser installer will output. we have to configure a '.gitignore' file. 
 this command will create it.
+
 	```bash
 	nano .gitignore
 	```
+
 - Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
@@ -114,6 +119,7 @@ this command will create it.
 
 ## 3. Running Chrome Headless Script
 - Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. First, navigate to where you've placed the file then run:
+
 	```bash
 	./install_chrome_headless.sh #if this doesn't work immediatley  run the follwoing command:
 	chmod +x install_chrome_headless.sh 
@@ -132,6 +138,7 @@ After installation, test it by running a quick dump of https://example.com (this
 	```
 ## 5. Validate Installation
 Confirm that all parts of the environment are correctly set up by checking the directory structure:
+
 	```bash
 	tree <your-project-repo> -I env
 	```
