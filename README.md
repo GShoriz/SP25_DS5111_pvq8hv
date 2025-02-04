@@ -28,11 +28,15 @@ Before setting up the virtual machine (VM), ensure you have:
 
 The first step in setting up the VM is to update the package lists to ensure the latest versions of required packages are installed.
 By running the following command:
-	 sudo apt update
+	**sudo apt update**
+	**sudo apt install make -y**
+	**sudo apt install python3.12-venv -y**
+	**sudo apt install tree**
+This can also be automatically  ran by calling on **init.sh** file located in the **scripts** folder which will be mentioned in step 6. 
 
 ## 3. Configure GitHub SSH Access
 
-To interact with GitHub securely via SSH, follow these steps:
+To interact with GitHub securely via SSH, follow these steps on your VM:
 
 1. Generate an SSH key:
 	ssh-keygen -t ed25519 -C "your-email@example.com"
@@ -63,7 +67,7 @@ This ensures that commits are correctly attributed to you.
 ## 5. Clone the Repository
 
 Now, you can clone this repository to your VM:
-	git clone git@github.com:your-username/your-repo.git cd your-repo
+	git clone git@github.com:GShoriz/SP25_DS5111_pvq8hv.git
 From this point, all setup instructions will be run directly from within this repository.
 
 ## 6. Run the Initialization Script
@@ -74,7 +78,7 @@ To install required dependencies, execute the provided `init.sh` script:
 This script will:
 - Update system packages.
 - Install essential tools (`make`, `python3.12-venv`, `tree`).
-# Installing Headless Chrome Browser 
+ 
 ## 7. Verify Setup
 
 After running the setup, verify everything is working:
@@ -87,6 +91,16 @@ If any command fails, re-run the corresponding setup step.
 - The `init.sh` script includes `sudo apt update`, so running it again after step 2 is redundant but ensures the system is fully updated.
 - If any step fails, ensure you have proper permissions (use `sudo` when necessary).
 
+# Chrome Headless Browser install
 
-# Installing Headless Chrome Browser
+## 1. Setting Up '.gitignore'
+- To prevent failed git pushes due to large files over 100mb, that the Chrome browser installer will output. we have to configure a '.gitignore' file. 
+	this command will create it.
+   ```bash
+   nano .gitignore
+
+Edit the .gitignore File add the following line:
+**google-chrome-stable_current_amd64.deb**
+
+
 
