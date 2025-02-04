@@ -102,8 +102,26 @@ this command will create it.
 - Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
+### Note: 
+- **At this point push all changes to your repository, before moving on to the next steps**
+
 ## 2. Adding Scripts to Your Repository
-- Copy the 'makefile' and 'requirements.txt.' from the **scripts** folder inside this repository.
+- Copy the 'install_chrome_headless.sh', 'requirements.txt.', and 'makefile' from the **scripts** folder inside this repository.
+
+- Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. first navigate to where you've placed the file then run:
+```bash
+./install_chrome_headless.sh #if this doesn't work immediatley run the follwoing command chmod +x install_chrome_headless.sh 
+
+After installtion, test it by running a quick dump of https//example.com
+
+- The requirements.txt includes necessary Python packages: 
+- 	pandas
+-	lxml
+**Install them by running:**
+```bash
+pip install -r requirements.txt
+
+- 
 
 - The Makefile automates the environment setup and running tasks. Here's how to use it:
 
