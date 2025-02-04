@@ -102,5 +102,14 @@ this command will create it.
 - Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
+## 2. Adding Scripts to Your Repository
+- Copy the 'makefile' and 'requirements.txt.' from the **scripts** folder inside this repository.
 
+- The Makefile automates the environment setup and running tasks. Here's how to use it:
 
+```make
+-  Set up Python virtual environment and install dependencies
+make update
+
+-  Test installation by running a job to fetch stock gainers
+make ygainers.csv
