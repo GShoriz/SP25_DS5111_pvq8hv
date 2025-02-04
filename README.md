@@ -74,7 +74,7 @@ To install required dependencies, execute the provided `init.sh` script:
 This script will:
 - Update system packages.
 - Install essential tools (`make`, `python3.12-venv`, `tree`).
-
+# Installing Headless Chrome Browser 
 ## 7. Verify Setup
 
 After running the setup, verify everything is working:
@@ -86,3 +86,7 @@ If any command fails, re-run the corresponding setup step.
 ### Notes:
 - The `init.sh` script includes `sudo apt update`, so running it again after step 2 is redundant but ensures the system is fully updated.
 - If any step fails, ensure you have proper permissions (use `sudo` when necessary).
+
+
+# Installing Headless Chrome Browser
+
