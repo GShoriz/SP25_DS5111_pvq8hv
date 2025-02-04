@@ -36,10 +36,10 @@ Before setting up the virtual machine (VM), ensure you have:
 
 The first step in setting up the VM is to update the package lists to ensure the latest versions of required packages are installed.
 By running the following command:
-	**sudo apt update**
-	**sudo apt install make -y**
-	**sudo apt install python3.12-venv -y**
-	**sudo apt install tree**
+-	**sudo apt update**
+-	**sudo apt install make -y**
+-	**sudo apt install python3.12-venv -y**
+-	**sudo apt install tree**
 This can also be automatically  ran by calling on **init.sh** file located in the **scripts** folder which will be mentioned in step 6. 
 
 ## 3. Configure GitHub SSH Access
