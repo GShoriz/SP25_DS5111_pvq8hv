@@ -74,9 +74,9 @@ From this point, all setup instructions will be run directly from within this re
 
 To install required dependencies, execute the provided `init.sh` script:
 
-	```bash
-	./init.sh
-	```
+```bash
+./init.sh
+```
 
 This script will:
 - Update system packages.
