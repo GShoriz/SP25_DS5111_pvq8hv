@@ -111,7 +111,8 @@ By running the following command:
 - To install required dependencies, execute the provided `init.sh` script:
 
 	```bash
-	./init.sh
+	./init.sh #if this doesn't work immediatley run the follwoing command:
+        chmod +x init.sh
 	```
 
 This script will:
@@ -135,16 +136,16 @@ This script will:
 
 # Chrome Headless Browser install
 
-## 1. Setting Up '.gitignore'
+## 1. Setting Up .gitignore
 - To prevent failed git pushes due to large files over 100mb, that the Chrome browser installer will output. we have to configure a '.gitignore' file. 
-this command will create it.
+running the following command will create it.
 
 	```bash
 	nano .gitignore
 	```
 
 - Edit the .gitignore File add the following line:
-	- **google-chrome-stable_current_amd64.deb**
+	- **`google-chrome-stable_current_amd64.deb`**
 
 ### Note: 
 - **At this point push all changes to your repository, before moving on to the next steps**
@@ -160,7 +161,7 @@ this command will create it.
 - Run the `install_chrome_headless.sh` script to install Google Chrome in a headless configuration for web scraping tasks. First, navigate to where you've placed the file then run:
 
 	```bash
-	./install_chrome_headless.sh #if this doesn't work immediatley  run the follwoing command:
+	./install_chrome_headless.sh #if this doesn't work immediatley run the follwoing command:
 	chmod +x install_chrome_headless.sh 
 	```
 After installation, test it by running a quick dump of `https://example.com` (this is already incldued in the script)
