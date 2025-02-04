@@ -119,10 +119,8 @@ After installtion, test it by running a quick dump of https//example.com (this i
 - 	pandas
 -	lxml
 **Install them by running:**
-```bash
-pip install -r requirements.txt
-
-- 
+	```bash
+	pip install -r requirements.txt
 
 - The Makefile automates the environment setup and running tasks. Here's how to use it:
 
