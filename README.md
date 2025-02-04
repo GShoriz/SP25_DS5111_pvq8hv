@@ -40,6 +40,7 @@ By running the following command:
 -	**sudo apt install make -y**
 -	**sudo apt install python3.12-venv -y**
 -	**sudo apt install tree**
+
 This can also be automatically  ran by calling on **init.sh** file located in the **scripts** folder which will be mentioned in step 6. 
 
 ## 3. Configure GitHub SSH Access
