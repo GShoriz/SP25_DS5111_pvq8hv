@@ -1,4 +1,4 @@
-# Data Science Class Project Repository
+Data Science Class Project Repository
 
 ## Author Information
 
@@ -9,9 +9,17 @@
 
 ## Project Overview
 
-This repository is part of a class project for the 25SP_DS5111 course. The details of the project are to be determined, but the repository will be used for storing, sharing, and documenting all relevant project files and findings. This project aims to serve as a resource for researchers, developers, students, and anyone interested in data science.
+This repository is part of a class project for the 25SP_DS5111 course at the University of Virginia Data Science program. The goal of this project is to build an end-to-end micro pipeline for data storage and processing, with an emphasis on both the tools and methodology used. 
 
-Stay tuned for updates on project specifics and instructions on how to set up and use the various files and scripts contained in this repository.
+We plan to research and execute a variety of tools and strategies, including: 
+
+- **Version Control and Collaboration**: We use GitHub for source control and GitHub Actions for continuous integration and deployment. 
+- **Data Transformation and Storage**: Using DBT (Data Build Tool) and Snowflake to manage, convert, and store data efficiently.
+- **Command Line Operations**: Improving command-line skills for data manipulation and automated scripting. 
+- **Software Development Best Practices**: Using testing frameworks and design principles to enable reliable software development. 
+- **Integration with Data Science Workflows**: Combining classic command-line methodologies with new data science tools such as Jupyter Notebooks. 
+
+The purpose of this project is not only to create a working data pipeline, but also to pause and get a thorough understanding of the many tools, methodologies, and procedures involved. This repository will help participants develop a fully functional cloud-based pipeline capable of harvesting data, processing it, and presenting actionable insights to a 'client'. This will provide a practical framework for understanding and implementing data science projects in a real-world environment.
 
 
 
@@ -48,7 +56,7 @@ To interact with GitHub securely via SSH, follow these steps on your VM:
 	cat ~/.ssh/id_ed25519.pub
 - Copy the output.
 - Go to **GitHub** → **Settings** → **SSH and GPG Keys**.
-- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.
+- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.This repository is part of a class project for the 25SP_DS5111 course at the University of Virginia Data Science program. The goal of this project is to build an end-to-end micro pipeline for data storage and processing, with an emphasis on both the tools and methodology used. 
 
 3. Test the SSH connection:
 	ssh -T -i ~/.ssh/id_ed25519 git@github.com
