@@ -57,7 +57,7 @@ To interact with GitHub securely via SSH, follow these steps on your VM:
 	cat ~/.ssh/id_ed25519.pub
 - Copy the output.
 - Go to **GitHub** → **Settings** → **SSH and GPG Keys**.
-- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.This repository is part of a class project for the 25SP_DS5111 course at the University of Virginia Data Science program. The goal of this project is to build an end-to-end micro pipeline for data storage and processing, with an emphasis on both the tools and methodology used. 
+- Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.
 
 3. Test the SSH connection:
 	ssh -T -i ~/.ssh/id_ed25519 git@github.com
