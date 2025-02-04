@@ -8,3 +8,4 @@ sudo apt install ./google-chrome-stable_current_amd64.deb -y
 # Check Version of chrome and run a quick sanity check
 google-chrome-stable --version
 google-chrome-stable --headless --disable-gpu --dump-dom https://example.com/
+
