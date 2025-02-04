@@ -108,8 +108,8 @@ this command will create it.
 - The Makefile automates the environment setup and running tasks. Here's how to use it:
 
 ```make
--  Set up Python virtual environment and install dependencies
+#  Set up Python virtual environment and install dependencies
 make update
 
--  Test installation by running a job to fetch stock gainers
+#  Test installation by running a job to fetch stock gainers
 make ygainers.csv
