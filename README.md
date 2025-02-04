@@ -98,7 +98,7 @@ If any command fails, re-run the corresponding setup step.
 this command will create it.
    ```bash
    nano .gitignore
-```
+
 - Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
