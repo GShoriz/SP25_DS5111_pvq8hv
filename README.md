@@ -109,11 +109,11 @@ this command will create it.
 - Copy the 'install_chrome_headless.sh', 'requirements.txt.', and 'makefile' from the **scripts** folder inside this repository.
 
 - Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. first navigate to where you've placed the file then run:
-```bash
-./install_chrome_headless.sh
+	```bash
+	./install_chrome_headless.sh
  #if this doesn't work immediatley run the follwoing command chmod +x install_chrome_headless.sh 
 
-After installtion, test it by running a quick dump of https//example.com
+After installtion, test it by running a quick dump of https//example.com (this is already incldued in the script)
 
 - The requirements.txt includes necessary Python packages: 
 - 	pandas
