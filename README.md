@@ -95,11 +95,11 @@ If any command fails, re-run the corresponding setup step.
 
 ## 1. Setting Up '.gitignore'
 - To prevent failed git pushes due to large files over 100mb, that the Chrome browser installer will output. we have to configure a '.gitignore' file. 
-	this command will create it.
+this command will create it.
    ```bash
    nano .gitignore
-
-Edit the .gitignore File add the following line:
+```
+- Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
 
