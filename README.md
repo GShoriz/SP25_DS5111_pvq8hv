@@ -41,43 +41,68 @@ By running the following command:
 -	**sudo apt install python3.12-venv -y**
 -	**sudo apt install tree**
 
-This can also be automatically  ran by calling on **init.sh** file located in the **scripts** folder which will be mentioned in step 6. 
+- This can also be automatically  ran by calling on **init.sh** file located in the **scripts** folder which will be mentioned in step 6. 
 
 ## 3. Configure GitHub SSH Access
 
-To interact with GitHub securely via SSH, follow these steps on your VM:
+- To interact with GitHub securely via SSH, follow these steps on your VM:
 
 1. Generate an SSH key:
+	
+	```bash
 	ssh-keygen -t ed25519 -C "your-email@example.com"
+	```
 
 - Press **Enter** to accept the default file name.
 - Press **Enter** again to skip the passphrase prompt.
 
 2. Copy the SSH public key to GitHub:
+
+	```bash
 	cat ~/.ssh/id_ed25519.pub
+	```
+
 - Copy the output.
 - Go to **GitHub** → **Settings** → **SSH and GPG Keys**.
 - Click **New SSH Key**, name it based on your VM (e.g., `VM-Setup`), and paste the key.
 
 3. Test the SSH connection:
+	
+	```bash
 	ssh -T -i ~/.ssh/id_ed25519 git@github.com
-If successful, you should see a message confirming your GitHub username.
+	```
+
+- If successful, you should see a message confirming your GitHub username.
 
 ## 4. Set Up Git Credentials
 
-To configure Git with your user details:
-	USER="your-email@example.com" NAME="Your Name"
+- To configure Git with your user details in the Ubuntu console type the following (see **'setup_git_global_creds.sh'** for more details):
 
-	git config --global user.email "${USER}" git config --global user.name "${NAME}"
+	- USER="your-email@example.com"
+	- NAME="Your Name"
+	
+	- git config --global --list
+	
+	- git config --global user.email ${USER}
+	- git config --global user.name ${NAME}
 
-	git config --global --list
-This ensures that commits are correctly attributed to you.
+	- git config --global --list
+
+- This ensures that commits are correctly attributed to you. Alternativly, you can create and update the **'setup_git_global_creds.sh'** with your USER and NAME and call it by going to the place of the file and running:
+
+	```bash
+	./setup_git_global_creds.sh
+	```
 
 ## 5. Clone the Repository
 
-Now, you can clone this repository to your VM:
+- Now, you can clone this repository to your VM:
+
+	```bash
 	git clone git@github.com:GShoriz/SP25_DS5111_pvq8hv.git
-From this point, all setup instructions will be run directly from within this repository.
+	```
+
+- From this point, all setup instructions will be run directly from within this repository.
 
 ## 6. Run the Initialization Script
 
@@ -93,9 +118,12 @@ This script will:
  
 ## 7. Verify Setup
 
-After running the setup, verify everything is working:
-	git --version python3 --version tree --version
-If any command fails, re-run the corresponding setup step.
+- After running the setup, verify everything is working:
+	- git --version
+	- python3 --version 
+	- tree --version
+
+- **If any command fails, re-run the corresponding setup step.**
 
 ---
 
