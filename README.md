@@ -53,8 +53,8 @@ By running the following command:
 	ssh-keygen -t ed25519 -C "your-email@example.com"
 	```
 
-- Press **Enter** to accept the default file name.
-- Press **Enter** again to skip the passphrase prompt.
+	- Press **Enter** to accept the default file name.
+	- Press **Enter** again to skip the passphrase prompt.
 
 2. Copy the SSH public key to GitHub:
 
