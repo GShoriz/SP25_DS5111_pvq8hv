@@ -78,7 +78,7 @@ By running the following command:
 
 ## 4. Set Up Git Credentials
 
-- To configure Git with your user details in the Ubuntu console type the following (see **'setup_git_global_creds.sh'** for more details):
+- To configure Git with your user details in the Ubuntu console type the following (see **`setup_git_global_creds.sh`** for more details):
 
 	- USER="your-email@example.com"
 	- NAME="Your Name"
@@ -90,7 +90,7 @@ By running the following command:
 
 	- git config --global --list
 
-- This ensures that commits are correctly attributed to you. Alternativly, you can create and update the **'setup_git_global_creds.sh'** with your USER and NAME and call it by going to the place of the file and running:
+- This ensures that commits are correctly attributed to you. Alternatively, you can create and update the **`setup_git_global_creds.sh`** with your USER and NAME and call it by going to the place of the file and running:
 
 	```bash
 	./setup_git_global_creds.sh
