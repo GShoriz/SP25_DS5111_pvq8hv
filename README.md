@@ -72,7 +72,8 @@ By running the following command:
 	ssh -T -i ~/.ssh/id_ed25519 git@github.com
 	```
 
-- If successful, you should see a message confirming your GitHub username.
+- If successful, you should see a message confirming your GitHub username like the picture below.
+	![Step 3 Screenshot](pics/Step_3.jpg)
 
 ## 4. Set Up Git Credentials
 
