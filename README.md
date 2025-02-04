@@ -96,37 +96,48 @@ If any command fails, re-run the corresponding setup step.
 ## 1. Setting Up '.gitignore'
 - To prevent failed git pushes due to large files over 100mb, that the Chrome browser installer will output. we have to configure a '.gitignore' file. 
 this command will create it.
-   ```bash
-   nano .gitignore
-
+	```bash
+	nano .gitignore
+	```
 - Edit the .gitignore File add the following line:
 **google-chrome-stable_current_amd64.deb**
 
 ### Note: 
 - **At this point push all changes to your repository, before moving on to the next steps**
 
-## 2. Adding Scripts to Your Repository
-- Copy the 'install_chrome_headless.sh', 'requirements.txt.', and 'makefile' from the **scripts** folder inside this repository.
-
-- Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. first navigate to where you've placed the file then run:
-	```bash
-	./install_chrome_headless.sh
- #if this doesn't work immediatley run the follwoing command chmod +x install_chrome_headless.sh 
-
-After installtion, test it by running a quick dump of https//example.com (this is already incldued in the script)
+## 2. Installing Required Tools and Scripts
+- Copy the 'requirements.txt.', 'install_chrome_headless.sh', and 'makefile' from the **scripts** folder inside this repository.
 
 - The requirements.txt includes necessary Python packages: 
-- 	pandas
--	lxml
-**Install them by running:**
-	```bash
-	pip install -r requirements.txt
+-       pandas
+-       lxml
 
+## 3. Running Chrome Headless Script
+- Run the install_chrome_headless.sh script to install Google Chrome in a headless configuration for web scraping tasks. First, navigate to where you've placed the file then run:
+	```bash
+	./install_chrome_headless.sh #if this doesn't work immediatley  run the follwoing command chmod:
+	 +x install_chrome_headless.sh 
+	```
+After installation, test it by running a quick dump of https://example.com (this is already incldued in the script)
+
+## 4. Configure Environment with Makefile
 - The Makefile automates the environment setup and running tasks. Here's how to use it:
 
-```make
-#  Set up Python virtual environment and install dependencies
-make update
+	```make
+	#  Set up Python virtual environment and install dependencies
+	make update
 
-#  Test installation by running a job to fetch stock gainers
-make ygainers.csv
+	#  Test installation by running a job to fetch stock gainers
+	make ygainers.csv
+	```
+## 5. Validate Installation
+Confirm that all parts of the environment are correctly set up by checking the directory structure:
+	```bash
+	tree <your-project-repo> -I env
+	```
+### Explanation
+
+- **Pre-requisites**: Introduces the initial requirements and `.gitignore` setup to handle large files properly.
+- **Adding Scripts**: Describes how to add the makefile and requirements file to the project and what they do.
+- **Installing Chrome Headless Browser**: Guides through the installation of Chrome for headless operations necessary for scraping tasks.
+- **Validation**: Ensures the environment is running as indented. 
