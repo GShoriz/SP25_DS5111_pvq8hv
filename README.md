@@ -186,7 +186,7 @@ After installation, test it by running a quick dump of `https://example.com` (th
 	```
 - You should see the directory structure like the image below.
 
-	![Directory Structure Screenshot](pics/tree_direc_3.jpg)
+	![Directory Structure Screenshot](pics/tree_direc.jpg)
 
 
 ### Explanation
