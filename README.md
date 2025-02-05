@@ -184,6 +184,11 @@ After installation, test it by running a quick dump of `https://example.com` (th
 	```bash
 	tree <your-project-repo> -I env
 	```
+- You should see the directory structure like the image below.
+
+	![Directory Structure Screenshot](pics/tree_direc_3.jpg)
+
+
 ### Explanation
 
 - **Pre-requisites**: Introduces the initial requirements and `.gitignore` setup to handle large files properly.
