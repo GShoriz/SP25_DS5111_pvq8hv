@@ -21,4 +21,8 @@ wjsgainers.csv: wjsgainers.html
 
 lint:
 	@echo "Running pylint.."
-	pylint sample_code.py
+	pylint ../bin/normalize_csv.py
+
+test: lint
+	@echo "Running pytest.."
+	pytest -vvx ../tests
