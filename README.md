@@ -195,3 +195,8 @@ After installation, test it by running a quick dump of `https://example.com` (th
 - **Adding Scripts**: Describes how to add the makefile and requirements file to the project and what they do.
 - **Installing Chrome Headless Browser**: Guides through the installation of Chrome for headless operations necessary for scraping tasks.
 - **Validation**: Ensures the environment is running as indented. 
+
+
+# Badging Validation Workflow
+
+[![Feature Validation](https://github.com/GShoriz/SP25_DS5111_pvq8hv/actions/workflows/validations.yaml/badge.svg?branch=main)](https://github.com/GShoriz/SP25_DS5111_pvq8hv/actions/workflows/validations.yaml)
