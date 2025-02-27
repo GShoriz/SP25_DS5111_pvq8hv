@@ -26,5 +26,5 @@ class TestEnvironment(unittest.TestCase):
         self.assertIn('linux', sys.platform, "OS must be Linux")
 
     def test_python_version(self):
-    major, minor = sys.version_info.major, sys.version_info.minor
-    assert major == 3 and minor in [10, 11], "Python version must be 3.10 or 3.11"
+   	 major, minor = sys.version_info.major, sys.version_info.minor
+   	 assert major == 3 and minor in [10, 11], "Python version must be 3.10 or 3.11"
