@@ -2,6 +2,7 @@ import sys
 sys.path.append('..')
 import bin.normalize_csv as normalize_csv
 import pandas as pd
+import unittest
 
 def test_load_and_process_csv():
     # Create a sample DataFrame similar to normalize_csv.py
@@ -19,3 +20,10 @@ def test_load_and_process_csv():
     # Check that the DataFrame contains the right columns after processing
     expected_columns = ['symbol', 'price', 'price_change', 'price_percent_change']
     assert list(processed_df.columns) == expected_columns, "Processed DataFrame does not contain the expected columns"
+
+class TestEnvironment(unittest.TestCase):
+    def test_os(self):
+        self.assertIn('linux', sys.platform, "OS must be Linux")
+
+    def test_python_version(self):
+        self.assertTrue(sys.version_info >= (3, 10) and sys.version_info <= (3, 11), "Python version must be 3.10 or 3.11")
