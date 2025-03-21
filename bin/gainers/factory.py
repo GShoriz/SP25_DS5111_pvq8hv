@@ -1,9 +1,11 @@
-from abc import ABC, abstractmethod
 from base import GainerDownload, GainerProcess
+from yahoo import GainerDownloadYahoo, GainerProcessYahoo
+from wsj import GainerDownloadWSJ, GainerProcessWSJ
+from cnbc import GainerDownloadCNBC, GainerProcessCNBC
 
 class GainerFactory:
 	def __init__(self, choice):
-		assert choice in ['yahoo', 'wsj','cnbc', 'test'], f"Unrecognized gainer type {choice}"
+		assert choice in ['yahoo', 'wsj', 'cnbc', 'test'], f"Unrecognized gainer type {choice}"
 		self.choice = choice
 
 	def get _downloader(self):
