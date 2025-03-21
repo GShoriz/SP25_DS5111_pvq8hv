@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 class GainerDownload(ABC):
 	def __init__(self):
 		self.url = url
@@ -6,26 +8,14 @@ class GainerDownload(ABC):
 	def download(self):
 		pass
 
-class GainerDownloadYahoo(Gainerdownload):
+class GainerProcess(ABC):
 	def __init__(self):
 		pass
 
-	def download(self):
-		print("Downloading Yahoo Gainers")
-
-
-class GainerDownloadWSJ(GainerDownload):
-	def __init__(self):
+	@abstractmethod
+	def normalize(self):
 		pass
 
-	def download(self):
-		print("Downloading WSJ Gainers")
-
-
-class GainerDownloadCNBC(GainerDownload):
-	def __init__(self):
+	@abstractmethod
+	def save_with_timestamp(self):
 		pass
-
-	def download(self):
-		print("Downloading CNBC Gainers")
-
