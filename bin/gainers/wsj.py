@@ -86,7 +86,7 @@ class GainerProcessWSJ(GainerProcess):
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         filename = f"wsjgainers_{current_time}.csv"
         full_path = os.path.join(os.path.dirname(self.output_path), filename)
-        wsjgainers.to_csv(full_path, index=False)
+        data.to_csv(full_path, index=False)
         print(f"Saved normalized data with timestamp: {full_path}")
 
 if __name__ == "__main__":
