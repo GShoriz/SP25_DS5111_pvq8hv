@@ -76,7 +76,7 @@ class GainerProcessWSJ(GainerProcess):
             self.save_with_timestamp(wsjgainers)
         except AssertionError as error:
             print(f"Assertion Error: {error}")
-        except Exception as error:
+        except Exception as error: # pylint: disable=broad-except
             print(f"An error occurred: {error}")
 
     def save_with_timestamp(self, data):
