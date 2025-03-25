@@ -5,8 +5,10 @@ This module provides classes for downloading and processing WSJ gainer data.
 import os
 from datetime import datetime
 import pandas as pd
+from bin.gainers.base import GainerDownlaod
+from bin.gainers.base import GainerProcess
 
-class GainerDownloadWSJ:
+class GainerDownloadWSJ(GainerDownlaod):
     """
     Handles the downloading of WSJ gainer data.
     """
@@ -34,11 +36,13 @@ class GainerDownloadWSJ:
 
         print("WSJ gainer data converted to wsjgainers.csv and saved in ../sample_data")
 
-class GainerProcessWSJ:
+class GainerProcessWSJ(GainerProcess):
     """
     Handles normalization and timestamped saving of WSJ gainer data.
     """
-    def __init__(self, input_path='../scripts/wsjgainers.html', output_path='../sample_data/wsjgainers.csv'):
+    def __init__(self,
+                 input_path='../scripts/wsjgainers.html',
+                 output_path='../sample_data/wsjgainers.csv'):
         self.input_path = input_path
         self.output_path = output_path
 
@@ -51,11 +55,21 @@ class GainerProcessWSJ:
             wsjgainers = pd.read_csv(self.input_path)
             assert wsjgainers.shape[1] == 6, "Expected 6 columns in the input CSV"
             wsjgainers = wsjgainers[['Unnamed: 0', 'Last', 'Chg', '% Chg']].rename(
-                columns={'Unnamed: 0': 'symbol', 'Last': 'price', 'Chg': 'price_change', '% Chg': 'price_percent_change'}
+                columns={
+                    'Unnamed: 0': 'symbol',
+                    'Last': 'price',
+                    'Chg': 'price_change',
+                    '% Chg': 'price_percent_change'
+                }
             )
             wsjgainers['symbol'] = wsjgainers['symbol'].str.extract(r'\((\w+)\)')
             wsjgainers.dropna(inplace=True)
-            wsjgainers = wsjgainers.astype({'symbol': 'str', 'price': 'float', 'price_change': 'float', 'price_percent_change': 'float'})
+            wsjgainers = wsjgainers.astype({
+                'symbol': 'str',
+                'price': 'float',
+                'price_change': 'float',
+                'price_percent_change': 'float'
+            })
             assert wsjgainers.shape[1] == 4, "Expected 4 columns after transformation"
             self.save_with_timestamp(wsjgainers)
         except AssertionError as error:
