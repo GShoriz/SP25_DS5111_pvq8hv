@@ -1,77 +1,68 @@
 import os
 import pandas as pd
 import sys
+from datetime import datetime
 
-class GainerDownloadWSJ(GainerDownload):
-	def __init__(self):
-		super().__init__("https://www.wsj.com/market-data/stocks/us/movers")
+class GainerDownloadWSJ:
+    def __init__(self):
+        self.url = "https://www.wsj.com/market-data/stocks/us/movers"
 
-	def download(self):
-		print("Downloading WSJ gainers")
+    def download(self):
+	"""
+	Download WSJ data.
+	"""
+        print("Downloading WSJ gainers")
+        download_command = "sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 '" + self.url + "' > ../scripts/wsjgainers.html"
+        exit_code = os.system(download_command)
+        if exit_code != 0:
+            print("Error: Failed to download WSJ gainers HTML file.")
+            return  # Exit if the download fails
 
-	download_command = """sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 \
-        'https://www.wsj.com/market-data/stocks/us/movers' > ../scripts/wsjgainers.html"""
+        print("Downloaded WSJ HTML file, converting to CSV...")
+        convert_command = "python -c 'import pandas as pd; raw = pd.read_html(\"../scripts/wsjgainers.html\")[0]; raw.to_csv(\"../sample_data/wsjgainers.csv\")'"
+        exit_code = os.system(convert_command)
+        if exit_code != 0:
+            print("Error: Failed to convert WSJ HTML to CSV.")
+            return  # Exit if the conversion fails
 
-	exit_code = os.system(command)
-	if exit_code != 0:
-		print("Error: Failed to download WSJ gainers HTML file.")
+        print("WSJ gainer data converted to wsjgainers.csv and saved in ../sample_data")
 
-	return
-		print("Downloaded WSJ HTML file, converting to CSV...")
-
-	convert_command = """python -c 'import pandas as pd; \
-        raw = pd.read_html("../scripts/wsjgainers.html"); raw[0].to_csv("../sample_data/wsjgainers.csv")'"""
-
-	exit_code = os.system(convert_command)
-	if exit_code != 0:
-		print("Error: Failed to convert WSJ HTML to CSV.")
-
-	return
-		print("WSJ gainer data converted to wsjgainer.csv")
-
-class GainerProcessWSJ
-	def __init__(self, input_path='../scripts/wsjgainer.html', output_path='../sample_data/wsjgainers.csv':
-		self.input_path = input_path
-		self.output_path = output_path
+class GainerProcessWSJ:
+    def __init__(self, input_path='../scripts/wsjgainers.html', output_path='../sample_data/wsjgainers.csv'):
+        self.input_path = input_path
+        self.output_path = output_path
 
     def normalize(self):
-        """
-        Normalize the WSJ gainer data from CSV.
-        """
+	"""
+	Normalize the WSJ gainer data from CSV.
+	"""
         try:
             print("Normalizing WSJ gainers")
-
             wsjgainers = pd.read_csv(self.input_path)
             assert wsjgainers.shape[1] == 6, "Expected 6 columns in the input CSV"
-
-
-            wsjgainers = wsjgainers[['Unnamed: 0', 'Last', 'Chg', '% Chg']]
-            wsjgainers = wsjgainers.rename(columns={
-                'Unnamed: 0': 'symbol',
-                'Last': 'price',
-                'Chg': 'price_change',
-                '% Chg': 'price_percent_change'
-            })
+            wsjgainers = wsjgainers[['Unnamed: 0', 'Last', 'Chg', '% Chg']].rename(
+                columns={'Unnamed: 0': 'symbol', 'Last': 'price', 'Chg': 'price_change', '% Chg': 'price_percent_change'}
+            )
             wsjgainers['symbol'] = wsjgainers['symbol'].str.extract(r'\((\w+)\)')
-
-
-            wsjgainers = wsjgainers.dropna().astype({
-                'symbol': 'str',
-                'price': 'float',
-                'price_change': 'float',
-                'price_percent_change': 'float'
-            })
+            wsjgainers.dropna(inplace=True)
+            wsjgainers = wsjgainers.astype({'symbol': 'str', 'price': 'float', 'price_change': 'float', 'price_percent_change': 'float'})
             assert wsjgainers.shape[1] == 4, "Expected 4 columns after transformation"
-
-
-            wsjgainers.to_csv(self.output_path, index=False)
+            self.save_with_timestamp(wsjgainers)
             print(f"Normalization complete. Data saved to {self.output_path}")
-
         except AssertionError as e:
             print(f"Assertion Error: {e}")
         except Exception as e:
             print(f"An error occurred: {e}")
 
+    def save_with_timestamp(self, wsjgainers):
+        """
+        Save the normalized csv with a timestamp in the filename.
+        """
+        current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        filename = f"wsjgainers_{current_time}.csv"
+        full_path = os.path.join(os.path.dirname(self.output_path), filename)
+        wsjgainers.to_csv(full_path, index=False)
+        print(f"Saved normalized data with timestamp: {full_path}")
 
 if __name__ == "__main__":
     processor = GainerProcessWSJ()
