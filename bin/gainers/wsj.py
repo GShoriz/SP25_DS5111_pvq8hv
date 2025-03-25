@@ -1,14 +1,18 @@
+"""
+This py file will download, convert, process and save with timestamp WSJ gainers.
+"""
+
 import os
-import pandas as pd
 import sys
 from datetime import datetime
+import pandas as pd
 
 class GainerDownloadWSJ:
-	def __init__(self):
+    def __init__(self):
 		self.url = "https://www.wsj.com/market-data/stocks/us/movers"
 
-	def download(self):
-		"""
+    def download(self):
+        """
 		Download WSJ data.
 		"""
 		print("Downloading WSJ gainers")
