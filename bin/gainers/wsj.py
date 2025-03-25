@@ -7,7 +7,7 @@ from datetime import datetime
 import pandas as pd
 from ..base import GainerDownload, GainerProcess
 
-class GainerDownloadWSJ(GainerDownlaod):
+class GainerDownloadWSJ(GainerDownload):
     """
     Handles the downloading of WSJ gainer data.
     """
