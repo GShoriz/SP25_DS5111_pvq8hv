@@ -5,13 +5,14 @@ This module provides classes for downloading and processing WSJ gainer data.
 import os
 from datetime import datetime
 import pandas as pd
-from bin.gainers.base import GainerDownload, GainerProcess
+from base import GainerDownload, GainerProcess
 
 class GainerDownloadWSJ(GainerDownload): # pylint: disable=too-few-public-methods
     """
     Handles the downloading of WSJ gainer data.
     """
     def __init__(self):
+        super().__init__()
         self.url = "https://www.wsj.com/market-data/stocks/us/movers"
 
     def download(self):
@@ -78,7 +79,7 @@ class GainerProcessWSJ(GainerProcess):
         except Exception as error:
             print(f"An error occurred: {error}")
 
-    def save_with_timestamp(self, wsjgainers):
+    def save_with_timestamp(self, data):
         """
         Save the normalized csv with a timestamp in the filename.
         """
