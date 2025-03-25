@@ -55,9 +55,9 @@ class GainerProcessWSJ:
 			print(f"An error occurred: {e}")
 
 	def save_with_timestamp(self, wsjgainers):
-        	"""
-        	Save the normalized csv with a timestamp in the filename.
-        	"""
+		"""
+		Save the normalized csv with a timestamp in the filename.
+		"""
 		current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 		filename = f"wsjgainers_{current_time}.csv"
 		full_path = os.path.join(os.path.dirname(self.output_path), filename)
