@@ -19,10 +19,38 @@ wjsgainers.html:
 wjsgainers.csv: wjsgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wjsgainers.html'); raw[0].to_csv('wjsgainers.csv')"
 
+cnbcgainers.html:
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers/' > cnbcgainers.html
+
+
+cnbcgainers.csv: cnbcgainers.html
+	. env/bin/activate; python -c "import pandas as pd; raw = pd.read_html('cnbcgainers.html')[0]; raw.to_csv('../bin/gainers/cnbcgainers.csv')"
+
+
 lint:
 	@echo "Running pylint.."
 	pylint ../bin/normalize_csv.py
+	pylint ../bin/gainers/wsj.py
+	pylint ../bin/gainers/yahoo.py
+	pylint ../bin/gainers/cnbc.py
 
 test: lint
 	@echo "Running pytest.."
 	pytest -vvx ../tests
+gainers:
+ifeq ($(SRC), yahoo)
+	@echo "Processing Yahoo gainers..."
+	. env/bin/activate; python ../bin/gainers/GainerProcessYahoo.py ../bin/gainers/ygainers.csv
+else ifeq ($(SRC), wsj)
+	@echo "Processing WSJ gainers..."
+	. env/bin/activate; python ../bin/gainers/GainerProcessWSJ.py ../bin/gainers/wsjgainers.csv
+else ifeq ($(SRC), cnbc)
+	@echo "Processing CNBC gainers..."
+	. env/bin/activate; python ../bin/gainers/GainerProcessCNBC.py ../bin/gainers/cnbcgainers.csv
+else
+	@echo "Invalid source specified. Use SRC=yahoo, SRC=wsj, or SRC=cnbc."
+endif
+
+clean:
+	rm -f ../scripts/*.html
+	rm -f ../bin/gainers/*.csv
