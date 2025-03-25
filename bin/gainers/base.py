@@ -1,21 +1,38 @@
 from abc import ABC, abstractmethod
 
 class GainerDownload(ABC):
-	def __init__(self):
-		self.url = url
+    """
+    Abstract base class for downloading gainers.
+    """
 
-	@abstractmethod
-	def download(self):
-		pass
+    def __init__(self, url=None):
+        """
+        Initialize the downloader with a URL.
+        """
+        self.url = url
+
+    @abstractmethod
+    def download(self):
+        """
+        Method to download data. Must be implemented by subclasses.
+        """
+        pass
 
 class GainerProcess(ABC):
-	def __init__(self):
-		pass
+    """
+    Abstract base class for processing gainers.
+    """
 
-	@abstractmethod
-	def normalize(self):
-		pass
+    @abstractmethod
+    def normalize(self):
+        """
+        Method to normalize the data. Must be implemented by subclasses.
+        """
+        pass
 
-	@abstractmethod
-	def save_with_timestamp(self):
-		pass
+    @abstractmethod
+    def save_with_timestamp(self, data):
+        """
+        Method to save data with a timestamp. Must be implemented by subclasses.
+        """
+        pass
