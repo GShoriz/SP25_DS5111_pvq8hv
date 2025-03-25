@@ -5,9 +5,9 @@ This module provides classes for downloading and processing WSJ gainer data.
 import os
 from datetime import datetime
 import pandas as pd
-from ..base import GainerDownload, GainerProcess
+from bin.gainers.base import GainerDownload, GainerProcess
 
-class GainerDownloadWSJ(GainerDownload):
+class GainerDownloadWSJ(GainerDownload): # pylint: disable=too-few-public-methods
     """
     Handles the downloading of WSJ gainer data.
     """
