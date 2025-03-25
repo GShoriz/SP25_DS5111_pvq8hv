@@ -5,8 +5,7 @@ This module provides classes for downloading and processing WSJ gainer data.
 import os
 from datetime import datetime
 import pandas as pd
-from bin.gainers.base import GainerDownlaod
-from bin.gainers.base import GainerProcess
+from ..base import GainerDownload, GainerProcess
 
 class GainerDownloadWSJ(GainerDownlaod):
     """
@@ -20,8 +19,10 @@ class GainerDownloadWSJ(GainerDownlaod):
         Download WSJ data, convert to CSV, and handle errors.
         """
         print("Downloading WSJ gainers")
-        download_command = ("sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 "
-                            f"'{self.url}' > ../scripts/wsjgainers.html")
+        download_command = (
+            "sudo google-chrome-stable --headless --disable-gpu --dump-dom "
+            "--no-sandbox --timeout=5000 '" + self.url + "' > ../scripts/wsjgainers.html"
+        )
         if os.system(download_command) != 0:
             print("Error: Failed to download WSJ gainers HTML file.")
             return
