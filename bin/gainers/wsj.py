@@ -18,7 +18,7 @@ class GainerDownloadWSJ:
 			print("Error: Failed to download WSJ gainers HTML file.")
 			return  # Exit if the download fails
 
-	print("Downloaded WSJ HTML file, converting to CSV...")
+		print("Downloaded WSJ HTML file, converting to CSV...")
 		convert_command = "python -c 'import pandas as pd; raw = pd.read_html(\"../scripts/wsjgainers.html\")[0]; raw.to_csv(\"../sample_data/wsjgainers.csv\")'"
 		exit_code = os.system(convert_command)
 		if exit_code != 0:
