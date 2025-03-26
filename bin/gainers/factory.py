@@ -22,9 +22,9 @@ class GainerFactory:
         """
         if self.choice == 'yahoo':
             return GainerDownloadYahoo()
-        elif self.choice == 'wsj':
+        if self.choice == 'wsj':
             return GainerDownloadWSJ()
-        elif self.choice == 'cnbc':
+        if self.choice == 'cnbc':
             return GainerDownloadCNBC()
         raise ValueError(f"Unrecognized gainer type: {self.choice}")
 
@@ -34,8 +34,8 @@ class GainerFactory:
         """
         if self.choice == 'yahoo':
             return GainerProcessYahoo()
-        elif self.choice == 'wsj':
+        if self.choice == 'wsj':
             return GainerProcessWSJ()
-        elif self.choice == 'cnbc':
+        if self.choice == 'cnbc':
             return GainerProcessCNBC()
         raise ValueError(f"Unrecognized gainer type: {self.choice}")
