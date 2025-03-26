@@ -8,7 +8,7 @@ class GainerFactory:
 		assert choice in ['yahoo', 'wsj', 'cnbc', 'test'], f"Unrecognized gainer type {choice}"
 		self.choice = choice
 
-	def get _downloader(self):
+	def get_downloader(self):
 		if self.choice == 'yahoo':
 			return GainerDownloadYahoo()
 		elif self.choice == 'wsj':
@@ -21,6 +21,5 @@ class GainerFactory:
 			return GainerProcessYahoo()
 		elif self.choice == 'wsj':
 			return GainerProcessWSJ()
-
 		elif self.choice == 'cnbc':
 			return GainerProcessCNBC()
