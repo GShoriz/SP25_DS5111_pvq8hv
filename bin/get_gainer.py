@@ -3,9 +3,9 @@ Main script to process different types of gainers.
 """
 
 import sys
-from factory import GainerFactory
+from bin.factory import GainerFactory
 
-class ProcessGainer:
+class ProcessGainer: # pylint: disable=too-few-public-methods
     """
     Orchestrates the downloading, normalization, and saving of gainer data.
     """
