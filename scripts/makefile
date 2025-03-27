@@ -30,11 +30,12 @@ cnbcgainers.csv: cnbcgainers.html
 lint:
 	@echo "Running pylint.."
 	pylint ../bin/normalize_csv.py
-    pylint ../bin/gainers/factory.py
-    pylint ../bin/gainers/base.py
 	pylint ../bin/gainers/wsj.py
 	pylint ../bin/gainers/yahoo.py
 	pylint ../bin/gainers/cnbc.py
+	pylint ../bin/gainers/base.py
+	pylint ../bin/gainers/factory.py
+	pylint ../bin/get_gainer.py
 
 test: lint
 	@echo "Running pytest.."
