@@ -3,7 +3,7 @@ Main script to process different types of gainers.
 """
 
 import sys
-from bin.gainers.factory import GainerFactory
+from gainers.factory import GainerFactory
 
 class ProcessGainer: # pylint: disable=too-few-public-methods
     """
