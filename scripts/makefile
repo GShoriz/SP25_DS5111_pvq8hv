@@ -40,6 +40,7 @@ lint:
 test: lint
 	@echo "Running pytest.."
 	pytest -vvx ../tests
+
 gainers:
 ifeq ($(SRC), yahoo)
 	@echo "Processing Yahoo gainers..."
