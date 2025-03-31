@@ -24,7 +24,7 @@ cnbcgainers.html:
 
 
 cnbcgainers.csv: cnbcgainers.html
-	. env/bin/activate; python -c "import pandas as pd; raw = pd.read_html('cnbcgainers.html')[0]; raw.to_csv('../sample_data/cnbcgainers.csv')"
+	python -c "import pandas as pd; raw = pd.read_html('cnbcgainers.html'); raw[0].to_csv('../sample_data/cnbcgainers.csv')"
 
 
 lint:
