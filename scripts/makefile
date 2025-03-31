@@ -13,14 +13,14 @@ ygainers.html:
 ygainers.csv: ygainers.html
 	python -c "import pandas as pd; raw = pd.read_html('ygainers.html'); raw[0].to_csv('ygainers.csv')"
 
-wjsgainers.html:
+wsjgainers.html:
 	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=500 https://www.wsj.com/market-data/stocks/us/movers > wjsgainers.html
 
-wjsgainers.csv: wjsgainers.html
+wsjgainers.csv: wjsgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wjsgainers.html'); raw[0].to_csv('wjsgainers.csv')"
 
 cnbcgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers/' > cnbcgainers.html
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers' > cnbcgainers.html
 
 
 cnbcgainers.csv: cnbcgainers.html
