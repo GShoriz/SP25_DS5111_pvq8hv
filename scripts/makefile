@@ -7,11 +7,11 @@ env:
 update: env
 	. env/bin/activate; pip install -r requirements.txt
 
-ygainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200' > ygainers.html
+yahoogainers.html:
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200' > yahoogainers.html
 
-ygainers.csv: ygainers.html
-	python -c "import pandas as pd; raw = pd.read_html('ygainers.html'); raw[0].to_csv('ygainers.csv')"
+yahoogainers.csv: yahoogainers.html
+	python -c "import pandas as pd; raw = pd.read_html('yahoogainers.html'); raw[0].to_csv('yahoogainers.csv')"
 
 wsjgainers.html:
 	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=500 https://www.wsj.com/market-data/stocks/us/movers > wjsgainers.html
