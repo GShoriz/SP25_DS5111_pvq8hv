@@ -1,5 +1,0 @@
-from base import GainerDownload, GainerProcess
-
-class GainerDownloadWSJ(GainerDownload):
-	def __init__(self):
-		super().__init__
