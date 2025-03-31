@@ -19,12 +19,12 @@ wsjgainers.html:
 wsjgainers.csv: wsjgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('../sample_data/wsjgainers.csv')"
 
-cnbcgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers/' > cnbcgainers.html
+sanalysisgainers.html:
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://stockanalysis.com/markets/afterhours/' > sanalysisgainers.html
 
 
-cnbcgainers.csv: cnbcgainers.html
-	python -c "import pandas as pd; raw = pd.read_html('cnbcgainers.html'); raw[0].to_csv('../sample_data/cnbcgainers.csv')"
+sanalysisgainers.csv: sanalysisgainers.html
+	python -c "import pandas as pd; raw = pd.read_html('sanalysisgainers.html'); raw[0].to_csv('../sample_data/sanalysisgainers.csv')"
 
 
 lint:
@@ -32,7 +32,7 @@ lint:
 	pylint ../bin/normalize_csv.py
 	pylint ../bin/gainers/wsj.py
 	pylint ../bin/gainers/yahoo.py
-	pylint ../bin/gainers/cnbc.py
+	pylint ../bin/gainers/sanalysis.py
 	pylint ../bin/gainers/base.py
 	pylint ../bin/gainers/factory.py
 	pylint ../bin/get_gainer.py
@@ -48,17 +48,17 @@ ifeq ($(SRC), yahoo)
 else ifeq ($(SRC), wsj)
 	@echo "Processing WSJ gainers..."
 	. env/bin/activate; python ../bin/gainers/GainerProcessWSJ.py ../bin/gainers/wsjgainers.csv
-else ifeq ($(SRC), cnbc)
-	@echo "Processing CNBC gainers..."
-	. env/bin/activate; python ../bin/gainers/GainerProcessCNBC.py ../bin/gainers/cnbcgainers.csv
+else ifeq ($(SRC), sanalysis)
+	@echo "Processing STOCKANALYSIS gainers..."
+	. env/bin/activate; python ../bin/gainers/GainerProcessSANALYSIS.py ../bin/gainers/sanalysisgainers.csv
 else
-	@echo "Invalid source specified. Use SRC=yahoo, SRC=wsj, or SRC=cnbc."
+	@echo "Invalid source specified. Use SRC=yahoo, SRC=wsj, or SRC=sanalysis."
 endif
 
 clean:
 	rm -f ../scripts/yahoogainers.*
 	rm -f ../scripts/wsjgainers.*
-	rm -f ../scripts/cnbcgainers.*
+	rm -f ../scripts/sanalysisgainers.*
 	rm -f ../sample_data/yahoogainers.*
 	rm -f ../sample_data/wsjgainers.*
-	rm -f ../sample_data/cnbcgainers.*
+	rm -f ../sample_data/sanalysisgainers.*
