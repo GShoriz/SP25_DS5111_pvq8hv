@@ -20,7 +20,7 @@ wsjgainers.csv: wsjgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('../sample_data/wsjgainers.csv')"
 
 cnbcgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers' > cnbcgainers.html
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.cnbc.com/us-market-movers/' > cnbcgainers.html
 
 
 cnbcgainers.csv: cnbcgainers.html
