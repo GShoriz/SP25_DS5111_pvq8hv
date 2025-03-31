@@ -16,5 +16,6 @@ pytz==2025.1
 six==1.17.0
 tomlkit==0.13.2
 tzdata==2025.1
+git+https://github.com/hydraseq/pryzm.git@maste
 dbt-core
 dbt-snowflake
