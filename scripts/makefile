@@ -61,4 +61,4 @@ clean:
 	rm -f ../scripts/cnbcgainers.*
 	rm -f ../sample_data/yahoogainers.*
 	rm -f ../sample_data/wsjgainers.*
-	rm -f ../sample_data/wsjgainers.*
+	rm -f ../sample_data/cnbcgainers.*
