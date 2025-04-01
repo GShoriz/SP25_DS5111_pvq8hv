@@ -20,11 +20,11 @@
 #
 # m h  dom mon dow   command
 
-1,31 9-16 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make yahoogainers.csv >> /home/ubu
+1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make yahoogainers.csv >> /home/ubu
 ntu/SP25_DS5111_pvq8hv/sample_data/logs/yahoo.log 2>&1
 
-1,31 9-16 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make wsjgainers.csv >> /home/ubunt
+1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make wsjgainers.csv >> /home/ubunt
 u/SP25_DS5111_pvq8hv/sample_data/logs/wsj.log 2>&1
 
-1,31 9-16 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make sanalysisgainers.csv >> /home
+1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make sanalysisgainers.csv >> /home
 /ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/sanalysis.log 2>&1
