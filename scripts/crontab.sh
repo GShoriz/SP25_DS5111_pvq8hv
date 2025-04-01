@@ -20,11 +20,11 @@
 #
 # m h  dom mon dow   command
 
-1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_yahoo; make yahoogain
+1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; . env/bin/activate; make clean_yahoo; make yahoogain
 ers.csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/yahoo_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python yahoo_timestamp.py; make clean_yahoo
 
-1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_wsj; make wsjgainers.
+1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; . env/bin/activate; make clean_wsj; make wsjgainers.
 csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/wsj_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python wsj_timestamp.py; make clean_wsj
 
-1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_sanalysis; make sanal
+1,17,33,49 13-21 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; . env/bin/activate; make clean_sanalysis; make sanal
 ysisgainers.csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/sanalysis_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python sanalysis_timestamp.py; make clean_sanalysis
