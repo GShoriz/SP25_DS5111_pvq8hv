@@ -54,9 +54,9 @@ else
 endif
 
 clean:
-	rm -f ../scripts/yahoogainers.*
-	rm -f ../scripts/wsjgainers.*
-	rm -f ../scripts/sanalysisgainers.*
-	rm -f ../sample_data/yahoogainers.*
-	rm -f ../sample_data/wsjgainers.*
-	rm -f ../sample_data/sanalysisgainers.*
+	rm -f ../scripts/yahoogainers.html
+	rm -f ../scripts/wsjgainers.html
+	rm -f ../scripts/sanalysisgainers.html
+	rm -f ../sample_data/yahoogainers.csv
+	rm -f ../sample_data/wsjgainers.csv
+	rm -f ../sample_data/sanalysisgainers.csv
