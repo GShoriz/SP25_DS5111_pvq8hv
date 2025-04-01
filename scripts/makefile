@@ -14,7 +14,7 @@ yahoogainers.csv: yahoogainers.html
 	python -c "import pandas as pd; raw = pd.read_html('yahoogainers.html'); raw[0].to_csv('../sample_data/yahoogainers.csv')"
 
 wsjgainers.html:
-	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.wsj.com/market-data/stocks/us/movers' > wsjgainers.html
+	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=10000 'https://www.wsj.com/market-data/stocks/us/movers' > wsjgainers.html 2>/dev/null
 
 wsjgainers.csv: wsjgainers.html
 	python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('../sample_data/wsjgainers.csv')"
@@ -34,6 +34,11 @@ lint:
 	pylint ../bin/gainers/base.py
 	pylint ../bin/gainers/factory.py
 	pylint ../bin/get_gainer.py
+
+lint_timestamp:
+	pylint wsj_timestamp.py
+	pylint yahoo_timestamp.py
+	pylint sanalysis_timestamp.py
 
 test: lint
 	@echo "Running pytest.."
