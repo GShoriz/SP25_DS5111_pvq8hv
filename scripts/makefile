@@ -60,3 +60,14 @@ clean:
 	rm -f ../sample_data/yahoogainers.csv
 	rm -f ../sample_data/wsjgainers.csv
 	rm -f ../sample_data/sanalysisgainers.csv
+
+clean_yahoo:
+	rm -f ../scripts/yahoogainers.html
+	rm -f ../sample_data/yahoogainers.csv
+clean_wsj:
+	rm -f ../scripts/wsjgainers.html
+	rm -f ../sample_data/wsjgainers.csv
+
+clean_sanalysis:
+	rm -f ../scripts/sanalysisgainers.html
+	rm -f ../sample_data/sanalysisgainers.csv
