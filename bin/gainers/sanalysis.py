@@ -36,7 +36,7 @@ class GainerDownloadSANALYSIS(GainerDownload): # pylint: disable=too-few-public-
             print("Error: Failed to convert Stock Analysis HTML to CSV.")
             return
 
-        print("Stock Analysis gainer data converted to sanalysisgainers.csv and saved in ../sample_data")
+        print("Stock Analysis gainer data converted to csv and saved in ../sample_data")
 class GainerProcessSANALYSIS(GainerProcess):
     """
     Handles normalization and timestamped saving of Stock Analysis gainer data.
