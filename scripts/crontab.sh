@@ -20,11 +20,11 @@
 #
 # m h  dom mon dow   command
 
-1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make yahoogainers.csv >> /home/ubu
-ntu/SP25_DS5111_pvq8hv/sample_data/logs/yahoo.log 2>&1
+1,17,33,49 9-17 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_yahoo; make yahoogain
+ers.csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/yahoo_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python yahoo_timestamp.py
 
-1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make wsjgainers.csv >> /home/ubunt
-u/SP25_DS5111_pvq8hv/sample_data/logs/wsj.log 2>&1
+1,17,33,49 9-17 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_wsj; make wsjgainers.
+csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/wsj_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python wsj_timestamp.py
 
-1,31 9-17 * 4 2 cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make sanalysisgainers.csv >> /home
-/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/sanalysis.log 2>&1
+1,17,33,49 9-17 1 4 * cd /home/ubuntu/SP25_DS5111_pvq8hv; . env/bin/activate; cd /home/ubuntu/SP25_DS5111_pvq8hv/scripts; make clean_sanalysis; make sanal
+ysisgainers.csv > /home/ubuntu/SP25_DS5111_pvq8hv/sample_data/logs/sanalysis_$(date +\%Y-\%m-\%d_\%H-\%M).log 2>&1; python sanalysis_timestamp.py
