@@ -1,0 +1,2 @@
+sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=10000 'https://www.wsj.com/market-data/stocks/us/movers' > wsjgainers.html 2>/dev/null
+python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('../sample_data/wsjgainers.csv')"
