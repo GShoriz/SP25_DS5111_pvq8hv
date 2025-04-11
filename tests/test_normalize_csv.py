@@ -27,4 +27,5 @@ class TestEnvironment(unittest.TestCase):
 
     def test_python_version(self):
    	 major, minor = sys.version_info.major, sys.version_info.minor
-   	 assert major == 3 and minor in [10, 11], "Python version must be 3.10 or 3.11"
+   	 assert major == 3 and minor in [12, 13], "Python version must be 3.12 or 3.13"
+
