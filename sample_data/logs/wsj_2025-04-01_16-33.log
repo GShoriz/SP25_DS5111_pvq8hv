@@ -1,0 +1,34 @@
+sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://www.wsj.com/market-data/stocks/us/movers' > wsjgainers.html
+[5716:5775:0401/163302.525820:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.525872:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.525880:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.525886:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.525897:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[5716:5775:0401/163302.602538:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.667167:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5775:0401/163302.667184:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[5716:5716:0401/163302.957108:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[5716:5775:0401/163302.959566:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[5716:5716:0401/163303.034007:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[5716:5887:0401/163303.154489:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[5716:5887:0401/163303.161505:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[5716:5887:0401/163303.173439:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[5716:5716:0401/163409.764866:ERROR:headless_command_handler.cc(397)] Page load timed out.
+python -c "import pandas as pd; raw = pd.read_html('wsjgainers.html'); raw[0].to_csv('../sample_data/wsjgainers.csv')"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/env/lib/python3.12/site-packages/pandas/io/html.py", line 1240, in read_html
+    return _parse(
+           ^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/env/lib/python3.12/site-packages/pandas/io/html.py", line 1003, in _parse
+    raise retained
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/env/lib/python3.12/site-packages/pandas/io/html.py", line 983, in _parse
+    tables = p.parse_tables()
+             ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/env/lib/python3.12/site-packages/pandas/io/html.py", line 249, in parse_tables
+    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/env/lib/python3.12/site-packages/pandas/io/html.py", line 598, in _parse_tables
+    raise ValueError("No tables found")
+ValueError: No tables found
+make: *** [makefile:20: wsjgainers.csv] Error 1
