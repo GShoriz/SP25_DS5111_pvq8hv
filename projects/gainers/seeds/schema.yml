@@ -1,0 +1,53 @@
+version: 2
+
+seeds:
+  - name: gainers_25_04_23
+    description: "Daily stock gainers data collected on April 25, 2023."
+    config:
+      quote_columns: false
+      column_types:
+        symbol: varchar
+        percent_gain: float
+    columns:
+      - name: symbol
+        description: "Ticker symbol of the stock."
+        tests:
+          - not_null
+      - name: percent_gain
+        description: "Percentage gain of the stock."
+        tests:
+          - not_null
+
+  - name: gainers_26_04_23
+    description: "Daily stock gainers data collected on April 26, 2023."
+    config:
+      quote_columns: false
+      column_types:
+        symbol: varchar
+        percent_gain: float
+    columns:
+      - name: symbol
+        description: "Ticker symbol of the stock."
+        tests:
+          - not_null
+      - name: percent_gain
+        description: "Percentage gain of the stock."
+        tests:
+          - not_null
+
+  - name: gainers_27_04_23
+    description: "Daily stock gainers data collected on April 27, 2023."
+    config:
+      quote_columns: false
+      column_types:
+        symbol: varchar
+        percent_gain: float
+    columns:
+      - name: symbol
+        description: "Ticker symbol of the stock."
+        tests:
+          - not_null
+      - name: percent_gain
+        description: "Percentage gain of the stock."
+        tests:
+          - not_null

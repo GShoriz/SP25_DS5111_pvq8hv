@@ -1,0 +1,34 @@
+sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200' > yahoogainers.html
+[21517:21589:0402/200102.085280:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.085331:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.085339:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.085348:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.085364:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[21517:21589:0402/200102.172653:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.257071:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21589:0402/200102.257086:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[21517:21517:0402/200102.597321:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[21517:21589:0402/200102.602991:ERROR:bus.cc(408)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+[21517:21695:0402/200102.702633:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[21517:21517:0402/200102.710888:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: 
+[21517:21695:0402/200102.739971:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.UPower.GetDisplayDevice: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[21517:21695:0402/200102.740135:ERROR:object_proxy.cc(576)] Failed to call method: org.freedesktop.UPower.EnumerateDevices: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+[21517:21517:0402/200142.677985:ERROR:headless_command_handler.cc(397)] Page load timed out.
+python -c "import pandas as pd; raw = pd.read_html('yahoogainers.html'); raw[0].to_csv('../sample_data/yahoogainers.csv')"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/scripts/env/lib/python3.12/site-packages/pandas/io/html.py", line 1240, in read_html
+    return _parse(
+           ^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/scripts/env/lib/python3.12/site-packages/pandas/io/html.py", line 1003, in _parse
+    raise retained
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/scripts/env/lib/python3.12/site-packages/pandas/io/html.py", line 983, in _parse
+    tables = p.parse_tables()
+             ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/scripts/env/lib/python3.12/site-packages/pandas/io/html.py", line 249, in parse_tables
+    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/SP25_DS5111_pvq8hv/scripts/env/lib/python3.12/site-packages/pandas/io/html.py", line 598, in _parse_tables
+    raise ValueError("No tables found")
+ValueError: No tables found
+make: *** [makefile:14: yahoogainers.csv] Error 1
