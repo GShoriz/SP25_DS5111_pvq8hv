@@ -1,21 +1,21 @@
-unnamed:_0,no,symbol,company_name,percent_change,stock_price,volume,market_cap
-0,1,AREB,"American Rebel Holdings, Inc.",392.42%,19.5,81300353,1.92M
-1,2,AEHL,Antelope Enterprise Holdings Limited,102.38%,4.25,11088217,3.54M
-2,3,IBO,Impact BioMedical Inc.,100.43%,0.93,1102326217,11.24M
-3,4,CXAI,CXApp Inc.,76.00%,1.42,90415229,23.37M
-4,5,LOCL,Local Bounti Corporation,68.44%,4.75,473122,41.11M
-5,6,XHG,XChange TEC.INC,50.00%,1.11,2802182,22.78M
-6,7,WCT,Wellchange Holdings Company Limited,43.59%,0.28,202706940,12.95M
-7,8,SOBR,"SOBR Safe, Inc.",42.03%,4.93,1246754,454.46K
-8,9,NTCL,NetClass Technology Inc,40.00%,9.8,366049,174.73M
-9,10,MHLD,"Maiden Holdings, Ltd.",39.97%,0.79,626595,78.28M
-10,11,FORD,"Forward Industries, Inc.",38.21%,6.8,526575,7.49M
-11,12,ICCT,iCoreConnect Inc.,34.99%,5.71,82285797,7.96M
-12,13,ALDX,"Aldeyra Therapeutics, Inc.",33.10%,1.89,12895936,112.85M
-13,14,RGC,Regencell Bioscience Holdings Limited,32.55%,32.21,240589,419.14M
-14,15,NTHI,"NeOnc Technologies Holdings, Inc.",31.11%,12.56,93729,235.45M
-15,16,VRCA,Verrica Pharmaceuticals Inc.,26.21%,0.53,781585,48.65M
-16,17,NWTG,Newton Golf Company,25.68%,1.86,2612467,552.76K
-17,18,NWTN,NWTN Inc.,23.00%,0.402,21563807,115.10M
-18,19,PAMT,Pamt Corp.,22.23%,13.58,195451,295.92M
-19,20,AUUD,Auddia Inc.,22.19%,4.9,193155,2.48M
+unnamed_0,no,symbol,company_name,change,stock_price,volume,market_cap
+0,1,areb,american_rebel_holdings_inc_,392_42_,19.5,81300353,1_92m
+1,2,aehl,antelope_enterprise_holdings_limited,102_38_,4.25,11088217,3_54m
+2,3,ibo,impact_biomedical_inc_,100_43_,0.93,1102326217,11_24m
+3,4,cxai,cxapp_inc_,76_00_,1.42,90415229,23_37m
+4,5,locl,local_bounti_corporation,68_44_,4.75,473122,41_11m
+5,6,xhg,xchange_tec_inc,50_00_,1.11,2802182,22_78m
+6,7,wct,wellchange_holdings_company_limited,43_59_,0.28,202706940,12_95m
+7,8,sobr,sobr_safe_inc_,42_03_,4.93,1246754,454_46k
+8,9,ntcl,netclass_technology_inc,40_00_,9.8,366049,174_73m
+9,10,mhld,maiden_holdings_ltd_,39_97_,0.79,626595,78_28m
+10,11,ford,forward_industries_inc_,38_21_,6.8,526575,7_49m
+11,12,icct,icoreconnect_inc_,34_99_,5.71,82285797,7_96m
+12,13,aldx,aldeyra_therapeutics_inc_,33_10_,1.89,12895936,112_85m
+13,14,rgc,regencell_bioscience_holdings_limited,32_55_,32.21,240589,419_14m
+14,15,nthi,neonc_technologies_holdings_inc_,31_11_,12.56,93729,235_45m
+15,16,vrca,verrica_pharmaceuticals_inc_,26_21_,0.53,781585,48_65m
+16,17,nwtg,newton_golf_company,25_68_,1.86,2612467,552_76k
+17,18,nwtn,nwtn_inc_,23_00_,0.402,21563807,115_10m
+18,19,pamt,pamt_corp_,22_23_,13.58,195451,295_92m
+19,20,auud,auddia_inc_,22_19_,4.9,193155,2_48m
